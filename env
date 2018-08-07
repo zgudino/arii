@@ -13,3 +13,6 @@ MONGODB_URI='mongodb://[hostname][:[port]]/[database]'
 CHANNEL=[channel_name]
 THRESHOLD=10
 SLEEP_TIME=10000
+
+# Cron
+SCHEDULE='* * * * *'
