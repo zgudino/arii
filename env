@@ -1,0 +1,15 @@
+# Telegram
+TELEGRAM_CHANNEL_URL='https://t.me/realtrades00'
+TELEGRAM_CHANNEL_MESSAGEID=5505
+
+# Redis
+REDIS_HOST='127.0.0.1'
+REDIS_PORT=6379
+
+# MongoDB
+MONGODB_URI='mongodb://[hostname][:[port]]/[database]'
+
+# Scraper
+CHANNEL=[channel_name]
+THRESHOLD=10
+SLEEP_TIME=10000
