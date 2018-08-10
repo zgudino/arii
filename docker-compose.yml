@@ -1,0 +1,23 @@
+version: "3"
+services:
+  cache:
+    image: redis:alpine
+
+  db:
+    image: mongo:3.6.6
+    command: --smallfiles
+
+  wwwscraper:
+    image: node:alpine
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/arii
+    working_dir: /arii
+    entrypoint: npm
+    command: start
+    depends_on:
+      - cache
+      - db
