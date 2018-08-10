@@ -1,5 +1,5 @@
 const redis = {
-    host: process.env.REDIST_HOST || '127.0.0.1',
+    host: process.env.REDIS_HOST || '',
     port: process.env.REDIS_PORT || 6379
 }
 
