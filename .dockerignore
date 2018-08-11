@@ -1,7 +1,8 @@
-.vscode
-.?env*
+# Archivos ocultos
+.*
+!.dockerignore
+!.gitignore
 
+# Docker
 Dockerfile*
 docker-compose*
-
-node_modules

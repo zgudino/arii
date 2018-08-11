@@ -8,11 +8,13 @@ services:
     command: --smallfiles
 
   app:
-    build: .
-    restart: always
+    build:
+      context: .
+      args:
+        WORK_DIR: /app
+    container_name: bazzer_arii-scraper
     env_file:
       - .env
-    command: npm start
     environment:
       - NODE_ENV=production
     depends_on:
