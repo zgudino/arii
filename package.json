@@ -1,8 +1,12 @@
 {
   "name": "@bazzer/arii",
   "version": "1.0.0",
-  "description": "🕷🕸 Escarba, transforma y almacena mensajes del canal Telegram REAL TRADES.",
-  "main": "index.js",
+  "description": "Escarba, transforma y almacena mensajes del canal Telegram REAL TRADES.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/its507/bazzer/arii.git"
+  },
   "scripts": {
     "start": "node src",
     "dev": "nodemon -w src"
