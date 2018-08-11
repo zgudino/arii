@@ -1,0 +1,22 @@
+version: "3"
+services:
+  cache:
+    image: redis:alpine
+
+  db:
+    image: mongo:3.6
+    command: --smallfiles
+
+  app:
+    build:
+      context: .
+      args:
+        WORK_DIR: /app
+    container_name: bazzer_arii-scraper
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db
+      - cache

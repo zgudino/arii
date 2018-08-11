@@ -1,5 +1,5 @@
 const redis = {
-    host: process.env.REDIS_HOST || '',
+    host: process.env.REDIS_HOST || '127.0.0.1',
     port: process.env.REDIS_PORT || 6379
 }
 
@@ -16,11 +16,11 @@ const logger = require('tracer').colorConsole()
 module.exports = {
     channel: process.env.CHANNEL || '',
     channelURL: process.env.TELEGRAM_CHANNEL_URL || '',
-    channelMessageId: Number(process.env.TELEGRAM_CHANNEL_MESSAGEID) || 5505,
-    mongodbURI: process.env.MONGODB_URI || '',
+    channelMessageId: Number(process.env.TELEGRAM_CHANNEL_MESSAGEID) || 0,
+    mongodbURI: process.env.MONGO_URI || '',
     redis,
     logger,
-    maxTasksPerProducer: Number(process.env.THRESHOLD) || 1,
+    maxTasksPerProducer: Number(process.env.THRESHOLD) || 5,
     sleepTime: Number(process.env.SLEEP_TIME) || 5e3,
     schedule: process.env.SCHEDULE || '* * * * *'
 }

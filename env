@@ -1,18 +1,22 @@
-# Telegram
-TELEGRAM_CHANNEL_URL='https://t.me/realtrades00'
-TELEGRAM_CHANNEL_MESSAGEID=5505
+# IMPORTANTE!!!
+# Renombre este archivo a .env o exporte variables a nivel de Sistema Operativo
+#
+# NOTA
+# Si exporta variable de entorno a nivel de OS, este ultimo tiene gobierna por tener mayor prioridad.
+# Mas detalle https://docs.docker.com/compose/compose-file/#env_file
 
 # Redis
-REDIS_HOST='127.0.0.1'
-REDIS_PORT=6379
+REDIS_HOST=cache
+REDIS_PORT
 
 # MongoDB
-MONGODB_URI='mongodb://[hostname][:[port]]/[database]'
+MONGO_URI=mongodb://db:27017/real_trades
+
+# Telegram
+TELEGRAM_CHANNEL_URL=https://t.me/realtrades00
+TELEGRAM_CHANNEL_MESSAGEID
 
 # Scraper
-CHANNEL=[channel_name]
-THRESHOLD=10
-SLEEP_TIME=10000
-
-# Cron
-SCHEDULE='* * * * *'
+CHANNEL=real_trades
+THRESHOLD
+SLEEP_TIME
