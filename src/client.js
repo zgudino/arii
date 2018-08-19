@@ -1,9 +1,13 @@
 const MongoClient = require('mongodb').MongoClient
 const { mongodbURI } = require('./globals')
 
-module.exports = (async function (params) {
-    const client = MongoClient.connect(mongodbURI)
+module.exports = async function () {
+    const client = await MongoClient.connect(mongodbURI)
+    const db = await client.db()
 
-    // TODO: Donde colocar definicion de esquema para las colleciones?
-    return client
-})()
+    db.collection('messages').createIndex('messageId', { unique: true })
+
+    return {
+        messages: db.collection('messages')
+    }
+}

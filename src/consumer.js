@@ -1,5 +1,5 @@
 const { consumer: Consumer } = require('webster')
-const mongoc = require('./client')
+const db = require('./client')
 const { logger, channel, redis, sleepTime } = require('./globals')
 
 class RTConsumer extends Consumer {
@@ -52,11 +52,8 @@ class RTConsumer extends Consumer {
             return false
         }
 
-        const client = await mongoc
-
         try {
-            const db = client.db()
-            const messages = db.collection('messages')
+            const { messages } = await db()
             const { insertedCount, insertedId } = await messages.insertOne(
                 document
             )
