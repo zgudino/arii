@@ -8,7 +8,7 @@ const {
     maxTasksPerProducer
 } = require('./globals')
 const url = require('url')
-const mongoc = require('./client')
+const db = require('./client')
 const producer = new Producer({
     channel,
     dbConf: {
@@ -20,10 +20,7 @@ module.exports = async function () {
     let tailMessageId
 
     try {
-        const client = await mongoc
-        const db = client.db()
-        const messages = db.collection('messages')
-
+        const { messages } = await db()
         const query = {}
         const options = {
             sort: { messageId: -1 },
@@ -36,7 +33,7 @@ module.exports = async function () {
         // Cuando la coleccion no existe, o no encuentre ultimo messageId, next.id sera el valor "semilla"
         tailMessageId = channelMessageId
         logger.warn(
-            `-- UNDEFINED COLLECTION -- Starting to seed from ${tailMessageId}`
+            `WARN - Starting to seed from ${tailMessageId} because collection is empty`
         )
     }
 
