@@ -1,12 +1,8 @@
 {
-  "name": "@bazzer/arii",
+  "name": "arii",
   "version": "1.0.0",
   "description": "Escarba, transforma y almacena mensajes del canal Telegram REAL TRADES.",
   "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/its507/bazzer/arii.git"
-  },
   "scripts": {
     "start": "node src",
     "dev": "nodemon -w src"
@@ -16,7 +12,7 @@
   "contributors": [
     "Maryon Torres <maryontorres@gmail.com>"
   ],
-  "license": "Apache-2.0",
+  "license": "WTFPL",
   "dependencies": {
     "mongodb": "^3.1.1",
     "node-cron": "^1.2.1",
